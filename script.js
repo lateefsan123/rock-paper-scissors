@@ -8,12 +8,28 @@ window.onload = function(){
     let mybutton4 = document.querySelector(".button4");
     let mybutton5 = document.querySelector(".button5");
     let mybutton6 = document.querySelector(".button6");
+    let restart = document.querySelector(".buttonholder button")
 
  
+
+    restart.addEventListener("click", event => {  
+        your_score=0;
+        cpu_score=0;
+        document.getElementById("us").innerHTML = your_score;
+        document.getElementById("cs").innerHTML = cpu_score;
+        restart.style.backgroundColor = "lightgrey"
+        setTimeout(function(){
+            restart.style.backgroundColor = "white"
+        }, 1000);
+        
+
+
+    })
     
 
     mybutton1.addEventListener("mouseover", event => {
         event.target.style.backgroundColor = "greenyellow";
+        
 
     })
 
@@ -81,6 +97,7 @@ window.onload = function(){
                 your_score+=1
                 if (your_score == 5) {
                     console.log("game over you win")
+                    ask = prompt("would you like to play again?")
                     return "won"
                 } else {
                     return "won";
@@ -210,6 +227,10 @@ window.onload = function(){
 
 
     })
+
+    
+
+    
 
 
     

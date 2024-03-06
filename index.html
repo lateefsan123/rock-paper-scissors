@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel = "ausio" href = "audio.html">
     <script src="script.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,6 +20,16 @@
     function normalImg(x) {
         x.style.height = "156px";
         x.style.width = "231px";
+    }
+
+    function bigbutton(x) {
+        x.style.height = "60px";
+        x.style.width = "136px";
+    }
+
+    function normalbutton(x) {
+        x.style.height = "50px";
+        x.style.width = "119px";
     }
 
     </script>
@@ -49,10 +60,18 @@
         <h3>user score - <label id = "us">0</label></h3>
         </div>
         <div class = "cscore">
-        <h3>cup score - <label id = "cs">0</label></h3>
+            <h3>cpu score - <label id = "cs">0</label></h3>
         </div>
         <div></div>
     </div>
+    <div class = "game-over">
+        <div></div>
+        <div class = "buttonholder">
+            <button onmouseover= "bigbutton(this)" onmouseout= "normalbutton(this)">restart game</button>
+        </div>
+        <div></div>
+    </div>
+    <audio autoplay loop src="sample.mp3" type="audio/mp3"></audio>
 
 </body>
 </html>
