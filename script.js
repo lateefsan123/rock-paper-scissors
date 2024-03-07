@@ -8,7 +8,22 @@ window.onload = function(){
     let mybutton4 = document.querySelector(".button4");
     let mybutton5 = document.querySelector(".button5");
     let mybutton6 = document.querySelector(".button6");
-    let restart = document.querySelector(".buttonholder button")
+    let restart = document.querySelector(".buttonholder button");
+    let winningscreen = document.querySelector(".theone");
+
+    const openBtn = document.getElementById("openModal");
+    const closeBtn = document.getElementById("closeModal");
+    const modal = document.getElementById("modal")
+
+    closeBtn.addEventListener("click", () => {
+        modal.classList.remove("open");
+        your_score=0;
+        cpu_score=0;
+        document.getElementById("us").innerHTML = your_score;
+        document.getElementById("cs").innerHTML = cpu_score;
+    });
+
+
 
  
 
@@ -18,6 +33,7 @@ window.onload = function(){
         document.getElementById("us").innerHTML = your_score;
         document.getElementById("cs").innerHTML = cpu_score;
         restart.style.backgroundColor = "lightgrey"
+        document.getElementById("displayer").innerHTML = ""
         setTimeout(function(){
             restart.style.backgroundColor = "white"
         }, 1000);
@@ -72,10 +88,11 @@ window.onload = function(){
                 setTimeout(function(){
                     mybutton5.style.backgroundColor = "lightgreen";
                 }, 1000);
-                document.getElementById("displayer").innerHTML = "cpu picked paper, you loose"
+                document.getElementById("displayer").innerHTML = "Cpu picked ✋🏾, You loose"
                 cpu_score+=1
                 if (cpu_score == 5) {
-                    console.log("game over cpu wins")
+                    modal.classList.add("open");
+                    document.getElementById("change").innerHTML = "You Loose"
                     return "lost"
                 } else {
                     return "lost";
@@ -85,19 +102,18 @@ window.onload = function(){
                 setTimeout(function(){
                     mybutton4.style.backgroundColor = "lightgreen";
                 }, 1000);
-                document.getElementById("displayer").innerHTML = "cpu picked rock, its a tie"
+                document.getElementById("displayer").innerHTML = "cpu picked ✊🏾, Its a tie"
                 return "tie"
             } else {
                 mybutton6.style.backgroundColor = "white";
                 setTimeout(function(){
                     mybutton6.style.backgroundColor = "lightgreen";
                 }, 1000);
-                document.getElementById("displayer").innerHTML = "cpu picked scissors, you win"
-                console.log("cpu picked scissors, you win")
+                document.getElementById("displayer").innerHTML = "Cpu picked ✂, You win"
                 your_score+=1
                 if (your_score == 5) {
-                    console.log("game over you win")
-                    ask = prompt("would you like to play again?")
+                    modal.classList.add("open");
+                    document.getElementById("change").innerHTML = "You Win"
                     return "won"
                 } else {
                     return "won";
@@ -110,9 +126,11 @@ window.onload = function(){
                 setTimeout(function(){
                     mybutton6.style.backgroundColor = "lightgreen";
                 }, 1000);
+                document.getElementById("displayer").innerHTML = "cpu picked ✂, Its a tie"
                 cpu_score+=1
                 if (cpu_score == 5) {
-                    console.log("game over cpu wins")
+                    modal.classList.add("open");
+                    document.getElementById("change").innerHTML = "You Loose"
                     return "lost"
                 } else {
                     return "lost";
@@ -122,17 +140,19 @@ window.onload = function(){
                 setTimeout(function(){
                     mybutton5.style.backgroundColor = "lightgreen";
                 }, 1000);
-                document.getElementById("displayer").innerHTML = "cpu picked paper, its a tie"
+                document.getElementById("displayer").innerHTML = "Cpu picked ✋🏾, Its a tie"
                 return "tie"
             } else {
                 mybutton4.style.backgroundColor = "white";
                 setTimeout(function(){
                     mybutton4.style.backgroundColor = "lightgreen";
                 }, 1000);
-                document.getElementById("displayer").innerHTML = "cpu picked rock, you win"
+                document.getElementById("displayer").innerHTML = "Cpu picked ✊🏾, You win"
                 your_score+=1
                 if (your_score == 5) {
-                    console.log("game over you win")
+                    modal.classList.add("open");
+                    document.getElementById("change").innerHTML = "You Won"
+                    
                     return "won"
                 } else {
                     return "won";
@@ -144,10 +164,11 @@ window.onload = function(){
                 setTimeout(function(){
                     mybutton4.style.backgroundColor = "lightgreen";
                 }, 1000);
-                document.getElementById("displayer").innerHTML = "cpu picked rock, you loose"
+                document.getElementById("displayer").innerHTML = "Cpu picked ✊🏾, You loose"
                 cpu_score+=1
                 if (cpu_score == 5) {
-                    console.log("game over cpu wins")
+                    modal.classList.add("open");
+                    document.getElementById("change").innerHTML = "You loose"
                     return "lost"
                 } else {
                     return "lost";
@@ -157,17 +178,18 @@ window.onload = function(){
                 setTimeout(function(){
                     mybutton6.style.backgroundColor = "lightgreen";
                 }, 1000);
-                document.getElementById("displayer").innerHTML = "cpu picked scissors, its a tie"
+                document.getElementById("displayer").innerHTML = "Cpu picked ✂, its a tie"
                 return "tie"
             } else {
                 mybutton5.style.backgroundColor = "white";
                 setTimeout(function(){
                     mybutton5.style.backgroundColor = "lightgreen";
                 }, 1000);
-                document.getElementById("displayer").innerHTML = "cpu picked paper, you win"
+                document.getElementById("displayer").innerHTML = "Cpu picked ✋🏾, you win"
                 your_score+=1
                 if (your_score == 5) {
-                    console.log("game over you win")
+                    modal.classList.add("open");
+                    document.getElementById("change").innerHTML = "You Won"
                     return "won"
                 } else {
                     return "won";

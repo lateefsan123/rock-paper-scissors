@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&family=Young+Serif&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/2da042f0f8.js" crossorigin="anonymous"></script>
     <script>
     function bigImg(x) {
@@ -31,6 +32,7 @@
         x.style.height = "50px";
         x.style.width = "119px";
     }
+
 
     </script>
 </head>
@@ -67,11 +69,18 @@
     <div class = "game-over">
         <div></div>
         <div class = "buttonholder">
-            <button onmouseover= "bigbutton(this)" onmouseout= "normalbutton(this)">restart game</button>
+            <button onmouseover= "bigbutton(this)" onmouseout= "normalbutton(this) ">restart game</button>
         </div>
         <div></div>
     </div>
-    <audio autoplay loop src="sample.mp3" type="audio/mp3"></audio>
+
+ <div class="modal" id="modal">
+    <div class = "modal-inner">
+        <h2 id = "change">you win</h2>
+        <p>would you like to play again</p>
+        <button id ="closeModal">play again</button>
+    </div>
+ </div>
 
 </body>
 </html>
